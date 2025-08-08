@@ -1,8 +1,7 @@
 body {
  background: 
-    url("wizard.png") no-repeat left center,   /* wizard image on the left */
-    url("mamm2.png") no-repeat right center,    /* mamm image on the right */
-    black;                                  /* rest of the background black */
+    url("wizard.png") no-repeat left center;   /* wizard image on the left */
+    background-color: black;                                   /* rest of the background black */
   background-size: auto 100%, auto 100%;       /* height fits the screen for both images */
   background-attachment: fixed, fixed;
   font-family: Arial, sans-serif;
