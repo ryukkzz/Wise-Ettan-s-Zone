@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WISE ETTAN</title>
+<style>
+    body {
+        background-color: black;
+        color: white;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    h1 {
+        font-size: 3em;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .image-container img {
+        max-width: 300px;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .button-with-label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .buttons button {
+        background-color: transparent; /* No background */
+        padding: 15px;
+        border: none; /* No border */
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .buttons button img {
+        width: 80px; /* Bigger icon */
+        height: 80px;
+    }
+
+    .buttons button:hover img {
+        transform: scale(1.1);
+        transition: transform 0.3s ease;
+    }
+
+    .label {
+        font-size: 1.2em;
+        color: white;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+
+<h1>WISE ETTAN</h1>
+
+<div class="container">
+    <div class="image-container">
+        <img src="wizard.png" alt="Wise Ettan">
+    </div>
+    <div class="buttons">
+        <div class="button-with-label">
+            <button><img src="cooking.png" alt="Cooking Icon"></button>
+            <div class="label">Cooking with Wise Ettan</div>
+        </div>
+        <button><img src="cooking.png" alt="Cooking Icon"></button>
+    </div>
+</div>
+
+</body>
+</html>
