@@ -40,9 +40,10 @@ Express.js
 
 # Run
 [commands]
-
+node server.js
+npum run
 ### Project Documentation
-For Software:
+For Software:express.js,html,css,js,gemini 
 
 # Screenshots (Add at least 3)
 ![Screenshot1](Add screenshot 1 here with proper name)
@@ -81,14 +82,14 @@ For Hardware:
 # Video
 [Add your demo video link here]
 *Explain what the video demonstrates*
-
+<video controls src="Screen Recording 2025-08-09 044107.mp4" title="Title"></video>
+demonstrating the functinalities
 # Additional Demos
 [Add any extra demo materials/links]
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+- gowri tj: front end and ai integration
+- geethanjali s: ai integration and backend
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 
