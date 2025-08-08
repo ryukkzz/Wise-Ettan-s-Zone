@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wise Ettan</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Georgia', serif;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3em;
+            font-style: italic;
+            color: gold;
+            margin-top: 20px;
+        }
+        .button-container {
+            margin-top: 40px;
+        }
+        .btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            margin: 20px;
+        }
+        .btn img {
+            width: 120px;
+            height: 120px;
+            border-radius: 20%;
+        }
+        #chat-container {
+            display: none;
+            margin-top: 40px;
+            background: #222;
+            padding: 20px;
+            border-radius: 15px;
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+        #messages {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+        }
+        #user-input {
+            width: 80%;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+        }
+        #send-btn {
+            padding: 10px 20px;
+            border: none;
+            background-color: gold;
+            color: black;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>WISE ETTAN</h1>
+    <div>
+        <img src="wizard.png" style="float:left; width:200px; margin-left:10px;">
+    </div>
+    <div class="button-container">
+        <button id="motivation-btn" class="btn">
+            <img src="cooking.png"><br>
+            <span style="font-size:1.2em; color:gold;">Cooking with Wise Ettan</span>
+        </button>
+    </div>
+
+    <div id="chat-container">
+        <div id="messages"></div>
+        <input type="text" id="user-input" placeholder="Ask Wise Ettan..." />
+        <button id="send-btn" onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        document.querySelector("#motivation-btn").addEventListener("click", function() {
+            document.getElementById("chat-container").style.display = "block";
+        });
+
+        async function sendMessage() {
+            const input = document.getElementById("user-input");
+            const userMessage = input.value;
+            if (!userMessage) return;
+
+            document.getElementById("messages").innerHTML += `<div><b>You:</b> ${userMessage}</div>`;
+            input.value = "";
+
+            const res = await fetch("/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: userMessage })
+            });
+            const data = await res.json();
+
+            document.getElementById("messages").innerHTML += `<div><b>Wise Ettan:</b> ${data.reply}</div>`;
+        }
+    </script>
+</body>
+</html>
