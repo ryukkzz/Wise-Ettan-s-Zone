@@ -1,0 +1,26 @@
+{
+  "name": "wise-ettan",
+  "version": "1.0.0",
+  "description": "<img width=\"3188\" height=\"1202\" alt=\"frame (3)\" src=\"https://github.com/user-attachments/assets/517ad8e9-ad22-457d-9538-a9e62d137cd7\" />",
+  "main": "button.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryukkzz/Wise-Ettan-s-Zone.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryukkzz/Wise-Ettan-s-Zone/issues"
+  },
+  "homepage": "https://github.com/ryukkzz/Wise-Ettan-s-Zone#readme",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0"
+  }
+}

@@ -1,0 +1,51 @@
+const express = require("express");
+const bodyParser = require("body-parser");
+const fetch = require("node-fetch");
+require("dotenv").config();
+
+const app = express();
+app.use(bodyParser.json());
+app.use(express.static(__dirname)); // Serves HTML/CSS/JS
+// ...existing code...
+
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/main.html");
+});
+
+// ...existing code...
+app.post("/chat", async (req, res) => {
+  try {
+    const userMessage = req.body.message;
+
+    const body = {
+      contents: [
+        {
+          parts: [
+            {
+              text: `You are a motivational and friendly chatbot named Wise Ettan. Respond to this: ${userMessage}`
+            }
+          ]
+        }
+      ]
+    };
+
+    const geminiRes = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${process.env.GEMINI_API_KEY}`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body)
+      }
+    );
+
+    const data = await geminiRes.json();
+    const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I couldn't think of anything right now.";
+
+    res.json({ reply });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ reply: "Error contacting Wise Ettan." });
+  }
+});
+
+app.listen(3000, () => console.log("Server running on http://localhost:3000"));
