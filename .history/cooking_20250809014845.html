@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cooking with Wise Ettan</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: #00ff99;
+    padding: 20px;
+    text-align: center;
+  }
+  input, button {
+    font-size: 1.2em;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
+    border: none;
+  }
+  input {
+    width: 60%;
+  }
+  button {
+    background-color: #00cc66;
+    color: white;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #009944;
+  }
+  #results {
+    margin-top: 20px;
+    background: #222;
+    padding: 15px;
+    border-radius: 10px;
+    min-height: 120px;
+    white-space: pre-wrap;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
+</head>
+<body>
+
+<h1>Cooking with Wise Ettan</h1>
+<p>Enter your ingredients separated by commas:</p>
+<input type="text" id="ingredientsInput" placeholder="e.g., tomato, onion, chicken" />
+<button id="generateBtn">Generate Dishes</button>
+
+<div id="results"></div>
+
+<script>
+  async function generateDishes() {
+    const ingredients = document.getElementById("ingredientsInput").value.trim();
+    const resultsDiv = document.getElementById("results");
+    if (!ingredients) {
+      alert("Please enter some ingredients!");
+      return;
+    }
+
+    resultsDiv.textContent = "Wise Ettan is cooking your dishes... 🍳";
+
+    try {
+      const response = await fetch("/api/recipe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ingredients })
+      });
+
+      if (!response.ok) throw new Error("API error");
+
+      const data = await response.json();
+
+      resultsDiv.textContent = data.reply;
+    } catch (e) {
+      resultsDiv.textContent = "Oops! Wise Ettan burnt the dishes. Try again.";
+      console.error(e);
+    }
+  }
+
+  document.getElementById("generateBtn").addEventListener("click", generateDishes);
+</script>
+
+</body>
+</html>

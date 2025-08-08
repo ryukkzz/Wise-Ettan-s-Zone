@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Grok Recipe Bot</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <header class="header">
+      <h1>Wise Ettan — Recipe Bot</h1>
+      <p class="sub">Type ingredients and Wise Ettan (Grok) will suggest a dish.</p>
+    </header>
+
+    <section class="chat">
+      <div id="messages" class="messages">
+        <div class="bot msg">👨‍🍳 Hi — tell me what ingredients you have (comma separated).</div>
+      </div>
+
+      <form id="input-form" class="input-area">
+        <input id="ingredients" type="text" placeholder="e.g. tomato, onion, egg" autocomplete="off" />
+        <button type="submit">Ask</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

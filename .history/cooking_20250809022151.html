@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Wise Ettan — Recipe Bot</title>
+
+  <!-- Cinzel Decorative -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <header>
+      <h1>WISE ETTAN — Recipe Sage</h1>
+      <p class="subtitle">Type ingredients and Wise Ettan will suggest a dish.</p>
+    </header>
+
+    <section class="chat-panel">
+      <div id="chat-box" class="chat-box" role="log" aria-live="polite"></div>
+
+      <form id="input-form" class="input-area" onsubmit="return false;">
+        <input id="user-input" type="text" placeholder="e.g. tomato, onion, cheese" autocomplete="off" />
+        <button id="send-btn" type="button">Ask Wise Ettan</button>
+      </form>
+    </section>
+
+    <footer class="footer-note">Your API key is kept on the server. Do not share it publicly.</footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
