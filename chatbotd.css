@@ -1,0 +1,71 @@
+body {
+    background-color: #111;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.chat-container {
+    background: #222;
+    border-radius: 15px;
+    padding: 20px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-container h1 {
+    text-align: center;
+    color: #00ff99;
+    font-family: 'Cinzel Decorative', cursive;
+}
+
+.messages {
+    background: #000;
+    border-radius: 10px;
+    padding: 10px;
+    height: 300px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+.message {
+    margin: 5px 0;
+}
+
+.user {
+    color: #00ff99;
+}
+
+.ettan {
+    color: #ffcc00;
+}
+
+.input-container {
+    display: flex;
+    gap: 5px;
+}
+
+input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+}
+
+button {
+    background: #00ff99;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #00cc77;
+}
