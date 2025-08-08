@@ -106,7 +106,8 @@
         </div>
     </div>
 </div>
-
+<audio id="hoverSound1" src="sound1.mp3" preload="auto"></audio>
+<audio id="hoverSound2" src="sound2.mp3" preload="auto"></audio>
 <script>
 document.querySelector("#motivation-btn").addEventListener("click", function() {
     window.open("chatbot.html", "_blank");
@@ -116,7 +117,23 @@ document.querySelector("#cooking-btn").addEventListener("click", function() {
 });
 
 </script>
+<script>
+  const button1 = document.querySelector(".button-with-label:nth-child(1) button");
+  const button2 = document.querySelector(".button-with-label:nth-child(2) button");
 
+  const hoverSound1 = document.getElementById("hoverSound1");
+  const hoverSound2 = document.getElementById("hoverSound2");
+
+  button1.addEventListener("mouseenter", () => {
+    hoverSound1.currentTime = 0;
+    hoverSound1.play();
+  });
+
+  button2.addEventListener("mouseenter", () => {
+    hoverSound2.currentTime = 0;
+    hoverSound2.play();
+  });
+</script>
 
 </body>
 </html>
